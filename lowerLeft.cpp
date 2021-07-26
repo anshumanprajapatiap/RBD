@@ -15,8 +15,6 @@ int lowerLeft(vector<vector<int>> arr, int i, int j){
 
 
 int lowerLefDp(vector<vector<int>> &arr, int i, int j, unordered_map<string,int> &dp){
-
-
     if(i >= arr.size() || j >= arr[i].size())
         return 0;
 
@@ -29,7 +27,7 @@ int lowerLefDp(vector<vector<int>> &arr, int i, int j, unordered_map<string,int>
     int right = lowerLefDp(arr,i+1,j+1,dp);
 
     dp[key] = arr[i][j] + max(down,right);
-    
+
     return arr[i][j] + max(down,right);
 }
 
