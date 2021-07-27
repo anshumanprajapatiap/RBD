@@ -27,8 +27,16 @@ void printArray(vector<int> arr){
     cout<<endl;
 }
 
+void printArray(vector<string> arr){
+    for(int i=0; i<arr.size(); i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+
 void inputArray(vector<int> &arr, int n){
     for(int i=0; i<n; i++){
         cin>>arr[i];
     }
 }
+
