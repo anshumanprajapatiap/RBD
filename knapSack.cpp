@@ -3,6 +3,8 @@
 using namespace std;
 
 //globaVariable
+
+//KnapSack
 int ans=0;
 
 void knapSack(vector<int> &w, vector<int> &p, int kw, int i, int n, int curr){
@@ -19,7 +21,7 @@ void knapSack(vector<int> &w, vector<int> &p, int kw, int i, int n, int curr){
 
 }
 
-
+//KnapSack - Memoized Version
 int KnapSackMemoization(vector<int> &wt, vector<int> &val, int w, int n, vector<vector<int>> &dpm){
     
     if(n==0 || w==0){
@@ -42,6 +44,7 @@ int KnapSackMemoization(vector<int> &wt, vector<int> &val, int w, int n, vector<
     
 }
 
+//KnapSack - TopDown DP
 int  knapSackDp(vector<int> &wt, vector<int> &val, int kw){
 
     int n = wt.size();
@@ -77,6 +80,8 @@ int  knapSackDp(vector<int> &wt, vector<int> &val, int kw){
 
 
 }
+
+
 
 
 

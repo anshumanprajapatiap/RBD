@@ -25,6 +25,26 @@ bool subsetSumDp(vector<int> arr, int n, int s, vector<vector<int>> &dp){
     return dp[n][s];
     
 }
+
+bool equalParition(vector<int> arr, int n){
+    
+    int sum =0;
+    for(int i=0; i<n; i++){
+        sum += arr[i];
+    }
+    
+    if(sum%2!=0){
+        return false;
+    }
+
+    int s = sum/2;
+    
+    vector<vector<int>> dp(n+1, vector<int>(s+1));
+
+    return subsetSumDp(arr, n, s, dp);
+}
+
+
 int main(){
     
     int n;
@@ -32,17 +52,18 @@ int main(){
 
     vector<int> arr(n);
     inputArray(arr, n);
-    int s;
-    cin>>s;
+   
 
-    vector<vector<int>> dp(n+1, vector<int>(s+1));
+    bool res = equalParition(arr, n);
 
-    bool res = subsetSumDp(arr, n, s, dp);
+    if(res){
+        cout<<"Possible"<<endl;
+    }
+    else{
+        cout<<"not possible"<<endl;
 
-    cout<<res<<endl;
-    print2DArray(dp);
-
-
+    }
+    
 
 
     return 0;
