@@ -2,14 +2,7 @@
 #include "utility_functions.h"
 using namespace std;
 
-bool driver(){
 
-}
-
-bool solve(vector<int> &arr, int i, int n, vector<int> temp){
-
-    
-}
  bool lis(vector<int> arr, int n){
      vector<vector<int>> dp(n+1, vector<int>(n+1));
 
@@ -24,8 +17,8 @@ bool solve(vector<int> &arr, int i, int n, vector<int> temp){
     for(int i=1; i<=n; i++){
         for(int j=1; j<=n; j++){
 
-            if(arr[i-1]<arr[j]){
-                dp[i][j] = dp[i][j-1];
+            if(arr[i-1]>arr[j-1]){
+                dp[i][j] = 1+dp[i-1][j-1];
             }
             else{
                 dp[i][j] = 0;
